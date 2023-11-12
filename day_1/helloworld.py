@@ -1,6 +1,8 @@
 # Import math library
 import math
 
+# Day 1: 30 Days of Python Programming
+
 # EXERCISE: LEVEL 2
 print(3 + 4)
 print(3 - 4)
