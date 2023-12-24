@@ -1,6 +1,16 @@
 # Importing Flask
 from flask import Flask, render_template, request, redirect, url_for
 import os # importing operating system module
+from pymongo.mongo_client import MongoClient
+MONGODB_URI = 'mongodb+srv://akist0707:ZyIByhCxhIlrAX42@30daysofpython.ilqhwj6.mongodb.net/?retryWrites=true&w=majority'
+client = MongoClient(MONGODB_URI)
+
+try:
+    db = client['thirty_days_of_python']
+    db.students.insert_one({'name': 'Alex', 'country': 'USA', 'city': 'Chicago', 'age': 30})
+    print(client.list_database_names())
+except Exception as e:
+    print(e)
 
 app = Flask(__name__)
 # to stop caching static file
